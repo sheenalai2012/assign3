@@ -3,7 +3,7 @@ import { Images, Themes } from "../assets/Themes";
 import Song from './Song';
 
 
-const TracksList = ({tracks}) => {
+const TracksList = ({tracks, navigation}) => {
     return (
     <View>
          <View style={styles.headingContainer}>
@@ -14,7 +14,7 @@ const TracksList = ({tracks}) => {
             data={tracks}
             renderItem={({ item, index }) => {
                 return (
-                <Song song={item} index={index}/>);
+                <Song song={item} index={index} navigation={navigation}/>);
             }}
             keyExtractor={(item) => item.id}
         />
